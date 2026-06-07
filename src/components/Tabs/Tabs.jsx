@@ -8,7 +8,7 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
           {tabs.map(tab => (
             <li
               key={tab.id}
-              className={tab.id === activeTabId ? 'is-active' : ''}
+              className={tab.id === activeTab.id ? 'is-active' : ''}
               data-cy="Tab"
             >
               <a
@@ -16,7 +16,7 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
                 data-cy="TabLink"
                 onClick={e => {
                   e.preventDefault();
-                  if (tab.id !== activeTabId) {
+                  if (tab.id !== activeTab.id) {
                     onTabSelected(tab.id);
                   }
                 }}
